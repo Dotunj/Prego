@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Prego\Providers\AppServiceProvider::class,
+        Prego\Providers\AuthServiceProvider::class,
+        // Prego\Providers\BroadcastServiceProvider::class,
+        Prego\Providers\EventServiceProvider::class,
+        Prego\Providers\RouteServiceProvider::class,
 
     ],
 
