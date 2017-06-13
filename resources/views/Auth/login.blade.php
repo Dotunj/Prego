@@ -28,6 +28,9 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-default">Sign in</button>
+                    @include('layouts.partials.alerts')
+                    <div class="row">
+                    </div>
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
             </form>
