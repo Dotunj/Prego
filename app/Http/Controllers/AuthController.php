@@ -52,4 +52,12 @@ public function postRegister(Request $request)
 
   }
 
+  public function logout()
+  {
+
+    Auth::logout();
+
+    return redirect('index')->with('info', 'Log out Successful');
+  }
+
 }

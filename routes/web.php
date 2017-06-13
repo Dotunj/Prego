@@ -30,3 +30,8 @@ Route::post('/auth/signin', [
 	'uses'=>'AuthController@postLogin',
 	 'middleware'=>['guest']
 ]);
+Route::get('/logout', [
+     'uses'=>'AuthController@logout',
+       'as'=>'auth.logout'
+]);
+Route::resource('projects', 'ProjectController');
