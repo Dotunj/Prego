@@ -4,7 +4,7 @@ namespace Prego\Http\Controllers;
 
 use Auth;
 use Prego\Project;
-use Prego\user;
+use Prego\User;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::personal()->get();
 
         return view('projects.index', compact('projects'));
     }
@@ -68,7 +68,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::find($id);
+
+        return view('projects.show', compact('project'));
     }
 
     /**

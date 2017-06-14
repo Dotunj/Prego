@@ -1,11 +1,10 @@
 @extends('layouts.master')
 @section('content')
 
-
+@include('layouts.partials.alerts')
   @if(!Auth::check())
  <h1> Project Management for Human beings </h1>
  <p> The promise of Prego is simple. All your projects and todos on one screen without having to filter by team or users.</p>
- 
  <p><img src="{{asset ('images/project.jpg')}}" /></p>
   <a class="btn btn-large btn-info" href="/auth/register"> Sign Up </a>
 
@@ -13,7 +12,6 @@
   @endif
 
   @if(Auth::check())
-  @include('layouts.partials.alerts')
   <div class="container-fluid">
           <div class="row">
             @include('layouts.partials.sidebar ')
