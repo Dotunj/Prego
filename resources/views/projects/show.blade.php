@@ -19,7 +19,8 @@
               <p>Comments: 0</p>
               <p>Attachments: 0</p>
               <p><a href="/projects/{{$project->id}}/edit">Edit</a></p>
-              <p><a href="#">Delete</a></p>
+              <button class"btn btn-circle btn-danger delete" data-action="{{url('projects/' .$project->id)}}" data-token="{{csrf_token()}}">
+                <i class="fa fa-trash-o"></i>Delete</button>
             </div>
         </div>
         <hr>
