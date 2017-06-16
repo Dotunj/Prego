@@ -81,7 +81,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::find($id);
+
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -93,7 +95,21 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Project::findorFail($id);
+          $this->validate($request, [
+              'project_name'=> 'required|min:3',
+               'due-date'=> 'required|date|after:today',
+                'project_notes' => 'required|min:10',
+                'project_status'=> 'required'
+            ]);
+
+            $values = $request->all();
+            $project->fill($values)->save();
+
+            return redirect()->back()->with('info', 'Your Project has been updated Successfully'); 
+
+
+    
     }
 
     /**

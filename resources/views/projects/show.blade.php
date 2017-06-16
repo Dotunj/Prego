@@ -18,7 +18,7 @@
               <p>Tasks: 0</p>
               <p>Comments: 0</p>
               <p>Attachments: 0</p>
-              <p><a href="#">Edit</a></p>
+              <p><a href="/projects/{{$project->id}}/edit">Edit</a></p>
               <p><a href="#">Delete</a></p>
             </div>
         </div>

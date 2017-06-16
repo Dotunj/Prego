@@ -11,4 +11,6 @@ class Project extends Model
     {
     return $query->where('user_id', Auth::user()->id);
    }
+
+   protected $fillable = ['project_name', 'project_notes', 'project_status', 'due_date'];
 }

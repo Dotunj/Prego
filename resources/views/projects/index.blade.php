@@ -11,7 +11,7 @@
 		<div class="row">
 		@foreach($projects as $project)
 		<div class="col-md-3" style="border:1px solid #ccc; margin-left:5px;">
-			<h2>{!! $project->project_name !!}</h2>
+			<h2><a href="/projects/{{$project->id}}">{!! $project->project_name !!}</h2>
 			<p> Due: {!! date_format(new DateTime($project->due_date), "D, m Y") !!}</p>
 			<p> Status: {!! $project->project_status !!}</p>
 			<p> Tasks: 0</p>
