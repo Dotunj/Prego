@@ -4,11 +4,11 @@
     </h4>
     <div class="row" style="border:1px solid #ccc;margin-left:5px;width:100%;padding:15px;">
         @if('tasks')
-        @foreach('$tasks as $task')
+        @foreach($tasks as $task)
         <div>
             <div><i class="fa fa-check-square-o"></i><span>{{ $task->task_name}} </span></div>
             <a href="/projects/{{$project->id}}/tasks/{{$task->id}}/edit">Edit</a>
-            <button class="btn btn-danger delete pull-right" data-action="#" data-token="{{csrf_token}}"><i class="fa fa-trash-o"></i>Delete</button>
+            <button class="btn btn-danger delete pull-right" data-action="#" data-token="{{csrf_token()}}"><i class="fa fa-trash-o"></i>Delete</button>
         </div>
         <hr/>
         @endforeach
