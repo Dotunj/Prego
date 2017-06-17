@@ -5,6 +5,7 @@ namespace Prego\Http\Controllers;
 use Auth;
 use Prego\Project;
 use Prego\User;
+use Prego\Task;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -69,8 +70,9 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::find($id);
+        $tasks = $this->getTasks($id);
 
-        return view('projects.show', compact('project'));
+        return view('projects.show', compact('project', 'tasks'));
     }
 
     /**
@@ -125,4 +127,10 @@ class ProjectController extends Controller
 
         return redirect()->route('projects.index')->with('info', 'Project deleted Successfully');
     }
+
+    public function getTasks($id)
+     {
+        $tasks = Task::project($id)->get();
+        return $tasks;
+     }
 }

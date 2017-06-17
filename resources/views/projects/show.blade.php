@@ -25,7 +25,6 @@
         <hr>
         <div class="row">
            @include('tasks.form')
-            </div>
             <div class="col-md-5">
                 <h4 class="page-header">
                     Files

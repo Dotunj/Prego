@@ -21,4 +21,11 @@ class ProjectTasksController extends Controller
 
        return redirect()->back()->with('info', 'Task created successfully');
     }
+
+    public function getoneProjectTask($projectId, $taskId)
+
+         $task= Task::where('project_id', $projectId)
+                     ->where('task_id', $taskId)
+                     ->first();
+        return view('tasks.edit')->withTask($task)->with('projectId', $projectId);
 }

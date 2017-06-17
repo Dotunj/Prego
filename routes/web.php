@@ -41,3 +41,11 @@ Route::post('projects/{projects}/tasks', [
      'uses'=> 'ProjectTasksController@postNewTask',
       'as'=> 'projects.tasks.create'
 ]);
+Route::get('projects/{projects}/tasks/{tasks}/edit', [
+      'uses'=> 'ProjectTasksController@getoneProjectTask',
+       'as'=> 'projects.tasks'
+]);
+Route::put('projects/{projects}/tasks/{tasks}', [
+      'uses'=>'ProjectTasksController@updateOneProjectTask',
+       ]);
+
