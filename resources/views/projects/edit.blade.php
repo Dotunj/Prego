@@ -6,7 +6,7 @@
  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h1 class="page-header">Edit Project</h1>
     <div class="col-lg-6">
-        <form class="form-vertical" role="form" method="post" action="{{ route('projects.update', $project->id }}">
+        <form class="form-vertical" role="form" method="post" action="{{ route('projects.update', $project->id) }}">
             <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                 <label for="status" class="control-label">Choose Status</label>
                 <select name="status" id="status">

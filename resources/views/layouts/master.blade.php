@@ -17,8 +17,7 @@
         @yield('content')
     </div>
 
-
-<script src="htpps://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-<script src="{{asset('js/app1.js')}}"></script>
+<script src="{!! asset('js/app.js') !!}"></script>
+<script src="{!! asset('js/app1.js') !!}"></script>
 </body>
 </html>
