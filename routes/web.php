@@ -48,4 +48,3 @@ Route::get('projects/{projects}/tasks/{tasks}/edit', [
 Route::put('projects/{projects}/tasks/{tasks}', [
       'uses'=>'ProjectTasksController@updateOneProjectTask',
        ]);
-

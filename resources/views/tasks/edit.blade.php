@@ -9,8 +9,8 @@
 	@include('layouts.partials.alerts')
 	<div clas="col-lg-6">
 		<form class="form-vertical" role="form" method="post" action="{{url('projects/' .$projectId. '/tasks/' . $task->id)}}">
-			<div class="form-group{{ $errors->has('task_name')? 'has-error' : ''}}">
-				<input type="text" name="task_name" class="form-control" id="name" value="{!! $task->task_name ?: !!}">
+			<div class="form-group" "{{ $errors->has('task_name')? 'has-error' : ''}}">
+				<input type="text" name="task_name" class="form-control" id="name" value="{!! $task->task_name ?: '' !!}">
 				@if($errors->has('task_name'))
 				<span class="help-block">{{ $errors->first('task_name')}}</span>
 				@endif
@@ -24,4 +24,4 @@
 		</form>
 	</div>
 </div>
-@stop`
+@stop

@@ -25,7 +25,7 @@ class ProjectTasksController extends Controller
     {
 
          $task= Task::where('project_id', $projectId)
-                     ->where('task_id', $taskId)
+                     ->where('id', $taskId)
                      ->first();
         return view('tasks.edit')->withTask($task)->with('projectId', $projectId);
 }
