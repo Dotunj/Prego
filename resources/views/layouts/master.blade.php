@@ -21,3 +21,5 @@
 <script src="{!! asset('js/app1.js') !!}"></script>
 </body>
 </html>
+
+

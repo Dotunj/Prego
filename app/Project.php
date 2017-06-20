@@ -14,3 +14,4 @@ class Project extends Model
 
    protected $fillable = ['project_name', 'project_notes', 'project_status', 'due_date'];
 }
+
