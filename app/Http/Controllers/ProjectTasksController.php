@@ -17,7 +17,7 @@ class ProjectTasksController extends Controller
       $task->task_name = $request->input('task_name');
       $task->project_id = $id; 
 
-       $task->save();
+       $task->save(); 
 
        return redirect()->back()->with('info', 'Task created successfully');
     }
@@ -43,11 +43,14 @@ class ProjectTasksController extends Controller
          return redirect()->back()->with('info', 'Your Task has been updated successfully');
    }
 
-   public function deleteOneProjectTask($)
-
+   public function deleteOneProjectTask($projectId, $taskId)
    {
+    DB:table('tasks')
+      ->where('project_id', $projectId)
+      ->where('id', $taskId)
+      ->delete();
 
-
-   }
+      return redirect()->route('projects.show')->with('info', 'Task deleted successfully');
+ }
 
 }
