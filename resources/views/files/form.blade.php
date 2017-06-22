@@ -3,10 +3,22 @@
                     Files
                 </h4>
                 <div class="row" style="border:1px solid #ccc;margin-left:5px;width:100%;padding:15px;">
-                    <form class="form-vertical" role="form" enctype="multipart/form-data" method="post" action="route{{'projects.files', ['projects'=>$project->id]}}">
+                @if($files)
+                @foreach($files as $file)
+                <div>
+                <div><i class="fa fa-check-square-o"></i>
+                     <span>
+                     <a href="{{$file->file_url}}" target="_blank">{{$file->file_name}}</a>
+                     </span>
+                     </div>
+                     </div>
+                     <hr/>
+                     @endforeach
+                     @endif
+                    <form class="form-vertical" role="form" enctype="multipart/form-data" method="post" action="{{route('projects.files', ['projects'=>$project->id])}}">
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <input type="text" name="name" class="form-control" id="name" value="{{ old('name') ?: '' }}">
-                            @if ($errors->has('file_name'))
+                            <input type="file" name="file_name" class="form-control" id="name" value="{{ old('name') ?: '' }}">
+                            @if($errors->has('file_name'))
                                 <span class="help-block">{{ $errors->first('file_name') }}</span>
                             @endif
                         </div>
