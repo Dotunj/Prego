@@ -226,11 +226,5 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
  ],
-'providers'=> [
-     'JD\Cloudder\CloudderServiceProvider'
-    ],
-  'aliases'=> [
-     'Cloudder'=>'JD\Cloudder\Facades\Cloudder'
-    ],
 ];
 
