@@ -3,11 +3,11 @@
                     Files
                 </h4>
                 <div class="row" style="border:1px solid #ccc;margin-left:5px;width:100%;padding:15px;">
-                    <form class="form-vertical" role="form" method="post" action="#">
+                    <form class="form-vertical" role="form" enctype="multipart/form-data" method="post" action="route{{'projects.files', ['projects'=>$project->id]}}">
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <input type="text" name="name" class="form-control" id="name" value="{{ old('name') ?: '' }}">
-                            @if ($errors->has('name'))
-                                <span class="help-block">{{ $errors->first('name') }}</span>
+                            @if ($errors->has('file_name'))
+                                <span class="help-block">{{ $errors->first('file_name') }}</span>
                             @endif
                         </div>
 
