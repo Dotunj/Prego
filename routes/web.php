@@ -56,3 +56,8 @@ Route::post('projects/{projects}/files', [
       'as'=> 'projects.files',
       'middleware'=> ['auth']
 	]);
+Route::post('projects/{projects}/comments', [
+     'uses'=> 'ProjectCommentController@postNewComment',
+      'as'=>'projects.comments.create',
+      'middleware'=>['auth']
+]);

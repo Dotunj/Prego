@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    //
+    protected $fillable = ['comments', 'project_id', 'user_id'];
+
+    public function scopeProject($query, $id)
+    {
+    	return $query->where('project_id', $id);
+    }
 }

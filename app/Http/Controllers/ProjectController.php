@@ -72,9 +72,10 @@ class ProjectController extends Controller
     {
         $project = Project::find($id);
         $tasks = $this->getTasks($id);
-       $files = $this->getFiles($id);
+        $files = $this->getFiles($id);
+        $comments = $this->getComments($id);
 
-        return view('projects.show', compact('project', 'tasks', 'files'));
+        return view('projects.show', compact('project', 'tasks', 'files', 'comments'));
     }
 
     /**
@@ -140,5 +141,12 @@ class ProjectController extends Controller
         $files = File::project($id)->get();
         return $files;
      }
+
+     public function getComments($id)
+    {
+     $comments = Commment::project($id)->get();
+     return $comments;
+
+    }
 
 }
