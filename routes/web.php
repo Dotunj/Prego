@@ -61,3 +61,13 @@ Route::post('projects/{projects}/comments', [
       'as'=>'projects.comments.create',
       'middleware'=>['auth']
 ]);
+Route::get('projects/{projects}/comments/{comments}/edit', [
+       'uses'=>'ProjectCommentController@getOneProjectComment',
+        'as'=> 'projects.comments'
+   ]);
+Route::put('projects/{projects}/comments/{comments}', [
+     'uses'=> 'ProjectCommentController@updateOneProjectComment',
+  ]);
+Route::delete('projects/{projects}/comments/{comments}', [
+  'uses'=>'ProjectCommentController@deleteOneProjectComment',
+]);

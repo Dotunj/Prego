@@ -7,6 +7,7 @@ use Prego\Project;
 use Prego\User;
 use Prego\File;
 use Prego\Task;
+use Prego\Comment;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -144,7 +145,7 @@ class ProjectController extends Controller
 
      public function getComments($id)
     {
-     $comments = Commment::project($id)->get();
+     $comments = Comment::project($id)->get();
      return $comments;
 
     }
