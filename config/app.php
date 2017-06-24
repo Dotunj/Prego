@@ -163,6 +163,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
+        Unicodeveloper\Mention\MentionServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...

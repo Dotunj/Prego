@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{asset('css/jquery.atwho.min.css')}}">
+    @include('mentions::assets')
 </head>
 <body>
     <div class="container">
@@ -19,6 +21,8 @@
 
 <script src="{!! asset('js/app.js') !!}"></script>
 <script src="{!! asset('js/app1.js') !!}"></script>
+<script src="{!! asset('js/jquery.atwho.js') !!}"></script>
+<script src="{!! asset('js/jquery.caret.js') !!}"></script>
 </body>
 </html>
 

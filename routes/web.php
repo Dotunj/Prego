@@ -71,3 +71,9 @@ Route::put('projects/{projects}/comments/{comments}', [
 Route::delete('projects/{projects}/comments/{comments}', [
   'uses'=>'ProjectCommentController@deleteOneProjectComment',
 ]);
+//Collaborator routes
+Route::post('projects/{projects}/collaborators', [
+     'uses'=>'ProjectCollaboratorsController@addCollaborator',
+      'as'=> 'projects.collaborators.create',
+      'middleware'=>['auth']
+ ]);
