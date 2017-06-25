@@ -8,6 +8,7 @@ use Prego\User;
 use Prego\File;
 use Prego\Task;
 use Prego\Comment;
+use Prego\Collaboration;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -75,8 +76,9 @@ class ProjectController extends Controller
         $tasks = $this->getTasks($id);
         $files = $this->getFiles($id);
         $comments = $this->getComments($id);
+        $collaborators = $this->getCollaborators($id);
 
-        return view('projects.show', compact('project', 'tasks', 'files', 'comments'));
+        return view('projects.show', compact('project', 'tasks', 'files', 'comments', 'collaborators'));
     }
 
     /**
@@ -148,6 +150,11 @@ class ProjectController extends Controller
      $comments = Comment::project($id)->get();
      return $comments;
 
+    }
+    public function getCollaborators($id)
+    {
+        $collaborators = Collaboration::project($id)->get();
+        return $collaborators;
     }
 
 }
